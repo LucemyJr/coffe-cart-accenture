@@ -1,5 +1,6 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 import homePage from '../pages/homePage'
+import checkoutPage from '../pages/checkoutPage'
 
 Given('que estou na página inicial', () => {
   cy.visit('/')
@@ -21,5 +22,20 @@ Then('devo ver o total correto no carrinho', () => {
 
 And('o total deve ser {string}', (valor) => {
     homePage.validarTotal(34.00)
+})
+
+When ('acesso o total', () =>{
+    homePage.acessarTotal()
+})
+
+And ('preencho nome e email', () => {
+  checkoutPage.preencherNome()
+  checkoutPage.preencherEmail()
+  checkoutPage.enviarCheckout()
+})
+
+Then('devo conseguir finalizar o cadastro', () => {
+  cy.get('.snackbar').should('be.visible')
+  
 })
 

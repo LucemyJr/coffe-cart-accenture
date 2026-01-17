@@ -9,6 +9,6 @@ Cenário: Adicionar três cafés e finalizar compra
     E recuso a oferta de café extra
     Então devo ver o total correto no carrinho
     E o total deve ser "$34.00"
-    Quando acesso o carrinho
+    Quando acesso o total
     E preencho nome e email
     Então devo conseguir finalizar o cadastro
