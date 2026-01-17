@@ -35,7 +35,8 @@ And ('preencho nome e email', () => {
 })
 
 Then('devo conseguir finalizar o cadastro', () => {
-  cy.get('.snackbar').should('be.visible')
-  
+    cy.screenshot('fluxo-finalizado-com-sucesso')
+    cy.get('.snackbar').should('be.visible')
+
 })
 
